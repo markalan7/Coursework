@@ -6,5 +6,5 @@ This is a resource and deadlock avoidance simulator using Banker's algorithm. Th
 compile:    gcc -o bankers driver.c process.c banker.c -lpthread      
 run:        ./bankers -n &lt;number_of_processes&gt; -a &lt;availability_vector&gt;
 
-**Warning**
+**Warning**                  
 This was originally compiled using gcc version 3.4.2. 
