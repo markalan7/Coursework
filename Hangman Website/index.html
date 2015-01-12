@@ -1,0 +1,136 @@
+<!--
+ Mark Silvis
+ CS 1520
+ Assignment 4
+ Main page for Hangman game
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content = "text/html; charset = utf-8" http-equiv = "Content-Type">
+	<meta content = "utf-i" http-equiv = "encoding">
+	<title>Hangman</title>
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+	<script type = "text/javascript" src = "hangman.js"></script>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+	<script type = "text/javascript">
+	$(document).ready(function()
+	{
+		// draw gallows
+		var canvas = document.getElementById("gallows");
+		var context = canvas.getContext("2d");
+		context.lineWidth = 20;
+
+		// frame top
+		context.moveTo(60, 0);
+		context.lineTo(250, 0);
+		context.stroke();
+
+		// frame pole
+		context.moveTo(60, 0);
+		context.lineTo(60, 300);
+		context.stroke();
+
+		// rope
+		context.lineWidth = 4;
+		context.moveTo(185, 0);
+		context.lineTo(185, 30);
+		context.stroke();
+
+		// draw hanging man
+		canvas = document.getElementById("animatehangman");
+		context = canvas.getContext("2d");
+		context.lineWidth = 3;
+		
+		// head
+		context.arc(150, 40, 30, 0, 2*Math.PI);
+		context.closePath();
+
+		// body
+		context.moveTo(150, 70);
+		context.lineTo(150, 130);
+		context.stroke();
+
+		// left arm
+		context.moveTo(150, 80);
+		context.lineTo(200, 70);
+		context.stroke();
+
+		// right arm
+		context.moveTo(150, 80);
+		context.lineTo(100, 70);
+		context.stroke()
+
+		// left leg
+		context.moveTo(150, 130);
+		context.lineTo(220, 170);
+		context.stroke();
+
+		// right leg
+		context.moveTo(150, 130);
+		context.lineTo(80, 170);
+		context.stroke();
+
+		context.lineWidth = 1;
+
+		// left eye
+		context.moveTo(135, 30);
+		context.lineTo(145, 40);
+		context.stroke();
+		context.moveTo(145, 30);
+		context.lineTo(135, 40);
+		context.stroke();
+
+		// right eye
+		context.moveTo(165, 30);
+		context.lineTo(155, 40);
+		context.stroke();
+		context.moveTo(155, 30);
+		context.lineTo(165, 40);
+		context.stroke();
+
+	});
+	</script>	
+	<div id = 'home'>
+		<center>
+		<h1>Hangman</h1>
+		<div id = "canvas">
+		<center><canvas id = "gallows"></canvas></center>
+		<center><canvas id = "animatehangman" class = "animatehangman"></canvas></center>
+		<button class = "gamebutton" onclick="newGame()">Start a New Round</button>
+		</div>
+		</center>
+	</div>	
+	<div id = 'game'>
+		<button id = "newround" class = "gamebutton" onclick="newRoundConfirm()">Start a New Round</button>
+		<div id = 'thehangman'>
+			<center>
+			<div id = "game_canvas">
+			<center><canvas id = "game_gallows"></canvas></center>
+			<center><canvas id = "statichangman"></canvas></center>
+			</div>
+			<center id = "currentword">
+				</center>
+			<div id = 'freshletters'>
+				<table id = 'letters'>
+				<tr>
+				<td id="A"></td><td id="B"></td><td id="C"></td><td id="D"></td><td id="E"></td><td id="F"></td><td id="G"></td><td id="H"></td><td id="I"></td><td id="J"></td><td id="K"></td><td id="L"></td><td id="M"></td><td id="N"></td><td id="O"></td><td id="P"></td><td id="Q"></td><td id="R"></td><td id="S"></td><td id="T"></td><td id="U"></td><td id="V"></td><td id="W"></td><td id="X"></td><td id="Y"></td><td id="Z"></td>
+				</tr>
+				</table>
+			</div>
+			</center>
+		</div>
+		<div id = 'pickedletters'>
+			<table id = "guesstable">
+			<tr><td id = "totalguesses"></td></tr>
+			<tr><td id = "wrongguesses"></td></tr>
+			<tr><td id = "guessedletters"><u>Guessed letters</u></td></tr>
+			</table>
+			<h2 id = "pickedletterlist"></h2>
+		</div>
+	</div>
+</body>
+</html>
