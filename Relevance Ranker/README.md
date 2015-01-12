@@ -4,7 +4,7 @@ This program ranks text documents based on keyword. The relevance score of a key
 ```
 w(i, j) = {[1 + log(f(i,j))] * log(N/n(i)), if f(i,j) > 0; otherwise 0}      
 ```
-where f(i,j) is the frequency of keyword i in document j, N is the total number of documents, and n(i) is the number of documents that cotain keyword i.
+where f(i,j) is the frequency of keyword i in document j, N is the total number of documents, and n(i) is the number of documents that contain keyword i.
 
 **Compile**      
 compile: make or javac *.java
