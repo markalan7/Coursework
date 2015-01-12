@@ -8,3 +8,5 @@ run:      ./bankers -n &lt;number_of_processes&gt; -a &lt;availability_vector&gt
 
 **Warning**                  
 This was originally compiled using gcc version 3.4.2. 
+
+This is why I now use spaces for indentation exclusively...
