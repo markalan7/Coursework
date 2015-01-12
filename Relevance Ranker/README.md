@@ -15,3 +15,7 @@ First, run preproc on every text file individually, creating a counts file for e
 Second, run the indexer, which looks for any counts files and creates an index as a result.
 
 Finally, run the ranker with at least one, but no more than three keywords. It will return the files that are relevant and their score based on the equation above.
+
+The requirements listed above are due to the structure of the assignment and its requirements.
+
+Included are 6 sample text documents.
